@@ -1,0 +1,74 @@
+/* Default styles for mobile */
+.slidercontainer {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .slider {
+    display: inline-block;
+    animation: scroll-mobile 10s linear infinite;
+    white-space: nowrap;
+  }
+  
+  .slider .flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Adjust gap between items */
+  }
+  
+  @keyframes scroll-mobile {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Styles for screens 768px and above */
+  @media (min-width: 768px) {
+    .slidercontainer {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  
+    .slider {
+      display: inline-block;
+      animation: scroll-tablet 15s linear infinite;
+      white-space: nowrap;
+    }
+  
+    @keyframes scroll-tablet {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+  
+  /* Styles for screens 1024px and above (desktop) */
+  @media (min-width: 1024px) {
+    .slidercontainer {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  
+    .slider {
+      display: inline-block;
+      animation: scroll-desktop 20s linear infinite;
+      white-space: nowrap;
+    }
+  
+    @keyframes scroll-desktop {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+  
