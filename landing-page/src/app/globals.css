@@ -1,4 +1,23 @@
 @tailwind base;
+
+@font-face {
+  font-family: 'Josefin_Sans';
+  src: url('../components/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype'); /* Regular font */
+  font-weight: normal; /* Adjust the weight if necessary */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Josefin_Sans';
+  src: url('../components/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype'); /* Italic font */
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+  
+
 @tailwind components;
 @tailwind utilities;
 
