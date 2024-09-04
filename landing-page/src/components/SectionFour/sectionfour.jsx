@@ -1,10 +1,20 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react';
 import New from "../../../public/img/new.svg";
 import style from './sectionfour.module.css';
 import Image from 'next/image';
-import { GoDotFill } from 'react-icons/go';
+import 'aos/dist/aos.css'; // import AOS CSS
+import AOS from 'aos';
 
 const Sectionfour = () => {
+useEffect(() => {
+       AOS.init({
+    duration: 1000, // Duration of animations
+    easing: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)', // Custom easing function
+});
+
+    }, []);
+
     return (
         <div className='bg-black'>
             <div className=' max-w-7xl mx-auto px-4 py-10 md:py-16 md:px-10 lg:px-20 lg:py-28 text-white'>
@@ -63,11 +73,14 @@ const Sectionfour = () => {
                 
 
                 <div className='pt-6 lg:pt-10'>
-                    <Image src={New} alt='all-img' className='w-[100%]' />
+                    <Image src={New} alt='all-img' className='w-[100%]' data-aos="fade-in"
+    data-aos-delay="200"
+    data-aos-easing="ease-in"  />
                 </div>
 
                 <div className='pt-14 md:pt-28 lg:pt-28 xl:pt-32'>
-                    <Image src={New} alt='all-img' className='w-[100%]' />
+                    <Image src={New} alt='all-img' className='w-[100%]' data-aos="fade-right"
+                    data-aos-delay="200" />
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import all from "../../../public/img/all.svg";
 import Image from 'next/image';
@@ -20,7 +21,7 @@ const Sectiontwo = () => {
        </div>
        </div>
 
-       <div className='pt-6 lg:pt-10'>
+       <div className='pt-6 lg:pt-10 ' >
         <Image src={all} alt='all-img' className='w-[100%]' />
        </div>
     </div>

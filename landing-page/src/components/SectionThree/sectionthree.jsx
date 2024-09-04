@@ -1,16 +1,21 @@
 "use client"
+import React, { useEffect } from 'react';
 import Footer from '@/components/Footer/footer'
-import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Link from 'next/link'
 import { IoMail } from "react-icons/io5";
 import { MdCall } from "react-icons/md"
+import 'aos/dist/aos.css'; // import AOS CSS
+import AOS from 'aos';
+
 
 const Sectionthree = () => {
+
+    
     return (
         <div className='bg-black '>
-            <div className='flex flex-col gap-y-8 lg:flex-row max-w-7xl mx-auto px-6 md:px-10 lg:px-20 py-10 text-white'>
+            <div className='flex flex-col gap-y-8 lg:flex-row max-w-7xl mx-auto px-6 md:px-10 lg:px-20 py-10 text-white' data-aos="fade-left">
                 <div className='flex-1'>
                     <div className='py-2 md:py-4'>
                         <p className="text-xl md:text-4xl lg:text-3xl xl:text-4xl font-josefin tracking-wider">

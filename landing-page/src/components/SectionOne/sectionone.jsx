@@ -31,7 +31,7 @@ const SectionOne = () => {
 
 
   return (
-    <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${currentImage.src})` }}>
+    <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${currentImage.src})` }} data-aos="fade-down" >
      <Navbar />
      <div className='flex justify-center items-center  h-full'>
     <div>
