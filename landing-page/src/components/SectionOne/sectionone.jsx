@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Navbar from '../Navbar/navbar';
 import Swiper from '../Swiper/swiper';
 import 'swiper/css';
@@ -7,20 +7,25 @@ import 'swiper/css';
 const SectionOne = () => {
   const [currentImage, setCurrentImage] = useState('/img/imageone.svg');
 
-  const images = [
+  // Memoize images array
+  const images = useMemo(() => [
     '/img/imageone.svg',
     '/img/imagetwo.svg',
     '/img/imagethree.svg',
     '/img/imagefour.svg',
     '/img/imagefive.svg',
-  ];
+  ], []);
 
   useEffect(() => {
-    // Preload images by creating Image elements and setting their src
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
+    // Preload images
+    const preloadImages = () => {
+      images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    preloadImages();
 
     const intervalId = setInterval(() => {
       setCurrentImage(prevImage => {
@@ -28,7 +33,7 @@ const SectionOne = () => {
         const nextIndex = (currentIndex + 1) % images.length;
         return images[nextIndex];
       });
-    }, 2000); // Change every 5 seconds
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [images]);
