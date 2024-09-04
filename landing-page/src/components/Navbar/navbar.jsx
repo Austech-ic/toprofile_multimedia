@@ -89,7 +89,7 @@ const Navbar = () => {
 
       {/* Mobile menu, show/hide based on menu state */}
       {isOpen && (
-        <div className="sm:hidden" id="mobile-menu">
+       <div className="sm:hidden absolute top-16 left-0 w-full z-[999] bg-gray-700 shadow-2xl">
           <div className="px-4 pt-2 pb-3 space-y-0 bg-gray-700 shadow-2xl">
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal">
               HOME
