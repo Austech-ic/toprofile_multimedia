@@ -3,6 +3,9 @@ import { useState, useEffect, useMemo } from 'react';
 import Navbar from '../Navbar/navbar';
 import Swiper from '../Swiper/swiper';
 import 'swiper/css';
+import { GoDotFill } from 'react-icons/go';
+
+
 
 const SectionOne = () => {
   const [currentImage, setCurrentImage] = useState('/img/imageone.svg');
@@ -55,8 +58,32 @@ const SectionOne = () => {
             </p>
           </div>
 
-          <div className='py-2 md:py-4 lg:py-4 flex justify-between items-center'>
+          <div className='block py-2 md:py-4 lg:py-4 lg:hidden'>
             <Swiper />
+          </div>
+
+
+          <div className='hidden py-2 md:py-4 lg:py-4 lg:flex justify-between items-center'>
+          <div className='flex justify-between items-center text-white'>
+          <div className='flex justify-start items-center'>
+            <GoDotFill className='text-red-600 h-8 w-8' />
+            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+              Chart-topping Disc Jockey (DJ) in the city!
+            </p>
+          </div>
+          <div className='flex justify-start items-center'>
+            <GoDotFill className='text-yellow-600 h-8 w-8' />
+            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+              Chart-topping Disc Jockey (DJ) in the city!
+            </p>
+          </div>
+          <div className='flex justify-start items-center'>
+            <GoDotFill className='text-purple-600 h-8 w-8' />
+            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+              Chart-topping Disc Jockey (DJ) in the city!
+            </p>
+          </div>
+        </div>
           </div>
 
           <div className='py-6 lg:py-10 flex justify-center items-center'>
