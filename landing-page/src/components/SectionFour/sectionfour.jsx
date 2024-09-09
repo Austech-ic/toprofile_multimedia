@@ -1,22 +1,19 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import New from "../../../public/img/new.svg";
+"use client";
+import React, { useEffect, useState } from "react";
 import eventone from "../../../public/img/eventone.svg";
 import eventwo from "../../../public/img/eventwo.svg";
 import eventhree from "../../../public/img/eventhree.svg";
 import eventfour from "../../../public/img/eventfour.svg";
 import eventfive from "../../../public/img/eventfive.svg";
-import newimg from "../../../public/img/newimg.svg";
-import style from './sectionfour.module.css';
-import Image from 'next/image';
-import 'aos/dist/aos.css'; // import AOS CSS
-import AOS from 'aos';
-import { GoDotFill } from 'react-icons/go';
-
-
-
+import style from "./sectionfour.module.css";
+import Image from "next/image";
+import { GoDotFill } from "react-icons/go";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Sectionfour = () => {
+    const [startIndex, setStartIndex] = useState(0);
+    const [borderWidth, setBorderWidth] = useState("w-[30%]");
 
     const details = [
         { id: 1, text: "Carnival" },
@@ -71,140 +68,106 @@ const Sectionfour = () => {
         { id: 50, text: "Open Mic Nights" },
     ];
 
-
-
     useEffect(() => {
         AOS.init({
             duration: 1000, // Duration of animations
-            easing: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)', // Custom easing function
+            easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)", // Custom easing function
         });
 
-    }, []);
+        // Automatically slide every 3 seconds
+        const interval = setInterval(() => {
+            setStartIndex((prevIndex) => {
+                const nextIndex = prevIndex + 16;
+                if (nextIndex >= details.length) {
+                    setBorderWidth("w-[30%]"); // Reset to the default width
+                    return 0; // Reset to the first set
+                }
+                // Update the width of the border as the items change
+                if (nextIndex === 16) {
+                    setBorderWidth("w-[50%]"); // Move to center on the second set
+                } else if (nextIndex === 32) {
+                    setBorderWidth("w-[100%]"); // Move to the end on the third set
+                }
+                return nextIndex;
+            });
+        }, 3000); // Slide every 3 seconds
+
+        return () => clearInterval(interval); // Cleanup on component unmount
+    }, [details.length]);
+
+    // Display the next set of 16 items based on the current startIndex
+    const displayedItems = details.slice(startIndex, startIndex + 16);
 
     return (
-        <div className=' overflow-x-hidden'>
-            <div className='bg-black'>
-                <div className='  px-4 py-10 md:py-16 md:px-10 lg:px-20 lg:py-28 text-white'>
-                    <div >
-                        <div >
-                            <p className='text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-700 '>Our Services</p>
-                        </div>
+        <div className="overflow-x-hidden">
+            <div className="bg-black">
+                <div className="px-4 py-10 md:py-16 md:px-10 lg:px-20 lg:py-28 text-white">
+                    <div>
+                        <p className="text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-700">
+                            Our Services
+                        </p>
 
-                        {/* Mobile */}
-                        <div className='block lg:hidden md:pt-6'>
-                            <div className={style.slidercontainer}>
-                                <div className={style.slider}>
-                                    <div className='flex justify-between items-center  gap-2  text-white'>
-                                        <div className='flex justify-start items-center gap-2'>
-                                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Corporate Events</p>
-                                            <div className='border border-t-8 h-[20px]'></div>
-                                        </div>
-                                        <div className='flex justify-start items-center  gap-2'>
-                                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Live Concerts</p>
-                                            <div className='border border-t-8 h-[20px]'></div>
-                                        </div>
-                                        <div className='flex justify-start items-center  gap-2'>
-                                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Weddings</p>
-                                            <div className='border border-t-8 h-[20px]'></div>
-                                        </div>
-                                        <div className='flex justify-start items-center  gap-2'>
-                                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Audiovisual Production</p>
-                                            <div className='border border-t-8 h-[20px]'></div>
-                                        </div>
-                                        <div className='flex justify-start items-center  gap-2'>
-                                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Rentals</p>
-                                            <div className='border border-t-8 h-[20px]'></div>
-                                        </div>
+                        {/* Displaying Images */}
+                        <div className="pt-6 lg:pt-10" data-aos="fade-right" data-aos-delay="200">
+                            <div className="flex flex-col lg:flex-row">
+                                <div className="lg:flex-0">
+                                    <Image src={eventone} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
+                                </div>
+                                <div className="lg:flex-1 flex flex-col">
+                                    <div className="flex flex-col lg:flex-row">
+                                        <Image src={eventwo} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
+                                        <Image src={eventhree} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
+                                    </div>
+                                    <div className="flex flex-col lg:flex-row">
+                                        <Image src={eventfour} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
+                                        <Image src={eventfive} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
-                        {/* Desktop */}
-                        <div className='hidden lg:flex items-center justify-center text-white gap-2 py-4'>
-                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Corporate Events</p>
-                            <div className='border border-t-8 h-[20px]'></div>
-                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'> Live Concerts</p>
-                            <div className='border border-t-8 h-[20px]'></div>
-                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Weddings</p>
-                            <div className='border border-t-8 h-[20px]'></div>
-                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'> Audiovisual Production</p>
-                            <div className='border border-t-8 h-[20px]'></div>
-                            <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Rentals</p>
-                        </div>
                     </div>
 
-
-
-                    <div className='pt-6 lg:pt-10 ' data-aos="fade-right"
-                        data-aos-delay="200">
-                        <div className='flex flex-col lg:flex-row  '>
-                            <div className='lg:flex-0'>
-                                <Image src={eventone} alt='all-img' className='md:w-[100%] lg:w-[auto]'
-                                />
-                            </div>
-                            <div className='lg:flex-1 flex flex-col'>
-                                <div className='flex flex-col lg:flex-row '>
-                                    <Image src={eventwo} alt='all-img' className='md:w-[100%] lg:w-[auto]'
-                                    />
-                                    <Image src={eventhree} alt='all-img' className='md:w-[100%] lg:w-[auto]'
-                                    />
-                                </div>
-                                <div className='flex  flex-col lg:flex-row'>
-                                    <Image src={eventfour} alt='all-img' className='md:w-[100%] lg:w-[auto]'
-                                    />
-                                    <Image src={eventfive} alt='all-img' className='md:w-[100%] lg:w-[auto]'
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div
-                className="pt-14 md:pt-16 lg:pt-12  bg-cover bg-center h-screen"
-                style={{ backgroundImage: `url('/img/newimg.svg')` }}
-            >
-
-                <div className=' max-w-7xl mx-auto px-4  md:px-10 lg:px-20 '
-                >
-                    <div>
-                        <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300 relative">
-                            Event We Cover
-                            
-                        </p>
-                        <div className="border-b-4 h-[2vh] border-orange-300 w-[50%] md:w-[55%] lg:w-[40%]" ></div>
-
-
-                    </div>
-
-
-                    {/* Display the events grid */}
-                    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-6 md:pt-10 md:gap-10 lg:gap-12 ">
-                        {details.map((datum) => (
-                            <div
-                                key={datum.id}
-                                className="bg-white flex items-center justify-center gap-2 border rounded-xl px-2 py-2 md:py-3"
-                            >
-                                <GoDotFill className="text-gray-500 w-6 h-6" />
-                                <p className="text-xs md:text-2xl lg:text-lg xl:text-xl font-light">
-                                    {datum.text}
+                    <div
+                        className="pt-14 md:pt-16 lg:pt-12 bg-cover bg-center h-screen"
+                        style={{ backgroundImage: `url('/img/newimg.svg')` }}
+                    >
+                        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20">
+                            <div className="pt-4 md:pt-10 lg:pt-24">
+                                <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300">
+                                    Event We Cover
                                 </p>
+                                <div className="border-b-4 w-[25%] h-[1vh] md:h-[2vh] ml-[80px] md:ml-[200px] lg:ml-[155px] xl:ml-[250px] border-orange-300 lg:w-[15%] xl:w-[17%]"></div>
+
                             </div>
-                        ))}
+
+                            {/* Display the events grid */}
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10 md:pt-20 lg:pt-10 xl:pt-24 md:gap-10 lg:gap-12">
+  {displayedItems.map((datum) => (
+    <div
+      key={datum.id}
+      className="bg-white flex items-center justify-start xl:justify-center gap-2 border rounded-xl px-2 py-2 md:py-3 lg:py-2"
+      style={{
+        minWidth: 'min-content', // Ensures the container's width is based on its content
+        width: 'auto', // Allows the width to grow based on content
+        whiteSpace: 'nowrap', // Prevents text from wrapping
+      }}
+    >
+      <GoDotFill className="text-gray-500 w-6 h-6" />
+      <p className="text-xs md:text-2xl lg:text-sm xl:text-xl font-light text-black">
+        {datum.text}
+      </p>
+    </div>
+  ))}
+</div>
+
+
+
+                        </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Sectionfour
+export default Sectionfour;
