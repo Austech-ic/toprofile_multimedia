@@ -34,19 +34,23 @@ const SectionOne = () => {
     const intervalId = setInterval(() => {
       setIsFading(true); // Start fade out
 
-      setTimeout(() => {
-        setCurrentImage(prevImage => {
-          const currentIndex = images.indexOf(prevImage);
-          const nextIndex = (currentIndex + 1) % images.length;
-          return images[nextIndex];
-        });
-        setIsFading(false); // Fade in after image is set
-      }, 500); // Wait 500ms for fade out
+      // Preload the next image before setting it
+      const preloadNextImage = new Image();
+      const nextImageSrc = images[(images.indexOf(currentImage) + 1) % images.length];
+      preloadNextImage.src = nextImageSrc;
+
+      preloadNextImage.onload = () => {
+        setTimeout(() => {
+          setCurrentImage(nextImageSrc);
+          setIsFading(false); // Fade in after image is set
+        }, 500); // Wait 500ms for fade out
+      };
     }, 5000); // Change every 5 seconds
 
     return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [images]);
+  }, [images, currentImage]);
 
+  
 
   return (
     <div className={`bg-cover bg-center h-screen transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url(${currentImage})` }}>
