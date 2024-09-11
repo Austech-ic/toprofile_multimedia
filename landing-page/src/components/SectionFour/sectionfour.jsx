@@ -108,9 +108,28 @@ const Sectionfour = () => {
                         </p>
 
                         {/* Displaying Images */}
-                        <div className="pt-6 lg:pt-10" data-aos="fade-right" data-aos-delay="200">
-                            <div className="flex flex-col lg:flex-row">
-                                <div className="lg:flex-0">
+                        <div className="pt-6 lg:pt-10 block lg:hidden xl:block" data-aos="fade-right" data-aos-delay="200">
+                            <div className="flex flex-col xl:flex-row ">
+                                <div className="xl:flex-0 ">
+                                    <Image src={eventone} alt="all-img" className="md:w-[100%] xl:w-[auto]  " />
+                                </div>
+                                <div className="lg:flex-1 flex flex-col  w-[100%]">
+                                    <div className="flex flex-col lg:flex-row">
+                                        <Image src={eventwo} alt="all-img" className="md:w-[100%] xl:w-[auto] " />
+                                        <Image src={eventhree} alt="all-img" className="md:w-[100%] xl:w-[auto] " />
+                                    </div>
+                                    <div className="flex flex-col lg:flex-row">
+                                        <Image src={eventfour} alt="all-img" className="md:w-[100%] xl:w-[auto]" />
+                                        <Image src={eventfive} alt="all-img" className="md:w-[100%] xl:w-[auto]" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="pt-6 lg:pt-10 hidden lg:block xl:hidden" data-aos="fade-right" data-aos-delay="200">
+                            <div className="flex flex-col lg:justify-center lg:items-center xl:flex-row">
+                                <div className="flex-1 xl:flex-0">
                                     <Image src={eventone} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
                                 </div>
                                 <div className="lg:flex-1 flex flex-col">
@@ -125,6 +144,12 @@ const Sectionfour = () => {
                                 </div>
                             </div>
                         </div>
+
+
+                       
+
+
+
                     </div>
 
                     <div
