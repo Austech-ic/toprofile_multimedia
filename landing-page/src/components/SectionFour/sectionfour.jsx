@@ -101,7 +101,7 @@ const Sectionfour = () => {
     return (
         <div className="overflow-x-hidden">
             <div className="bg-black">
-                <div className="px-4 py-10 md:py-16 md:px-10 lg:px-20 lg:py-28 text-white">
+                <div className="px-10 py-10 md:py-16 md:px-16 lg:px-20 lg:py-28 text-white">
                     <div>
                         <p className="text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-700">
                             Our Services
@@ -134,7 +134,7 @@ const Sectionfour = () => {
                         <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20">
                             <div className="pt-4 md:pt-10 lg:pt-24">
                                 <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300">
-                                    Event We Cover
+                                    Events We Cover
                                 </p>
                                 <div className="border-b-4 w-[25%] h-[1vh] md:h-[2vh] ml-[80px] md:ml-[200px] lg:ml-[155px] xl:ml-[250px] border-orange-300 lg:w-[15%] xl:w-[17%]"></div>
 
@@ -142,23 +142,19 @@ const Sectionfour = () => {
 
                             {/* Display the events grid */}
                             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10 md:pt-20 lg:pt-10 xl:pt-24 md:gap-10 lg:gap-12">
-  {displayedItems.map((datum) => (
-    <div
-      key={datum.id}
-      className="bg-white flex items-center justify-start xl:justify-center gap-2 border rounded-xl px-2 py-2 md:py-3 lg:py-2"
-      style={{
-        minWidth: 'min-content', // Ensures the container's width is based on its content
-        width: 'auto', // Allows the width to grow based on content
-        whiteSpace: 'nowrap', // Prevents text from wrapping
-      }}
-    >
-      <GoDotFill className="text-gray-500 w-6 h-6" />
-      <p className="text-xs md:text-2xl lg:text-sm xl:text-xl font-light text-black">
-        {datum.text}
-      </p>
-    </div>
-  ))}
-</div>
+                                {displayedItems.map((datum) => (
+                                    <div
+                                        key={datum.id}
+                                        className="bg-white flex items-center justify-start xl:justify-center gap-1 md:gap-2 lg:gap-0 border rounded-xl px-2 py-2 md:py-3 lg:py-2"
+                                    >
+                                        <GoDotFill className="text-gray-500 w-4 h-4  md:w-6 md:h-6" />
+                                        <p className="text-xs md:text-2xl lg:text-sm xl:text-xl font-light text-black max-w-full truncate overflow-hidden">
+                                            {datum.text}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+
 
 
 

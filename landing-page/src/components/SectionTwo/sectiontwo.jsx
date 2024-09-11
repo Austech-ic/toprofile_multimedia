@@ -9,7 +9,7 @@ const Sectiontwo = () => {
         <div className=' max-w-7xl mx-auto px-4 py-10 md:py-16 md:px-10 lg:px-20 lg:py-28 text-white'>
        <div >
       <div >
-      <p className='text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-600 '>Visual Of Our Rentals</p>
+      <p className='text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-600 '>Visuals Of Our Equipment</p>
       </div>
 
        <div className='flex items-center justify-center text-white gap-2 py-4'>
@@ -21,7 +21,7 @@ const Sectiontwo = () => {
        </div>
        </div>
 
-       <div className='pt-6 lg:pt-10 ' >
+       <div className='px-4 md:px-6 lg:px-0 pt-6 lg:pt-10 ' >
         <Image src={all} alt='all-img' className='w-[100%]' />
        </div>
     </div>

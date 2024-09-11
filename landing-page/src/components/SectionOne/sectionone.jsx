@@ -9,6 +9,7 @@ import { GoDotFill } from 'react-icons/go';
 
 const SectionOne = () => {
   const [currentImage, setCurrentImage] = useState('/img/imageone.svg');
+  const [isFading, setIsFading] = useState(false); // To handle fade effect
 
   // Memoize images array
   const images = useMemo(() => [
@@ -31,18 +32,24 @@ const SectionOne = () => {
     preloadImages();
 
     const intervalId = setInterval(() => {
-      setCurrentImage(prevImage => {
-        const currentIndex = images.indexOf(prevImage);
-        const nextIndex = (currentIndex + 1) % images.length;
-        return images[nextIndex];
-      });
+      setIsFading(true); // Start fade out
+
+      setTimeout(() => {
+        setCurrentImage(prevImage => {
+          const currentIndex = images.indexOf(prevImage);
+          const nextIndex = (currentIndex + 1) % images.length;
+          return images[nextIndex];
+        });
+        setIsFading(false); // Fade in after image is set
+      }, 500); // Wait 500ms for fade out
     }, 5000); // Change every 5 seconds
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [images]);
 
+
   return (
-    <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${currentImage})` }}>
+    <div className={`bg-cover bg-center h-screen transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url(${currentImage})` }}>
       <Navbar />
       <div className='flex justify-center items-center h-full'>
         <div>
@@ -58,12 +65,12 @@ const SectionOne = () => {
             </p>
           </div>
 
-          <div className='block py-2 md:py-4 lg:py-4 lg:hidden'>
+          <div className='block py-2 md:py-4 lg:py-4 xl:hidden'>
             <Swiper />
           </div>
 
 
-          <div className='hidden py-2 md:py-4 lg:py-4 lg:flex justify-between items-center'>
+          <div className='hidden py-2 md:py-4 lg:py-4 xl:flex justify-between items-center'>
           <div className='flex justify-between items-center text-white'>
           <div className='flex justify-start items-center'>
             <GoDotFill className='text-red-600 h-8 w-8' />
