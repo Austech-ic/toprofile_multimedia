@@ -112,7 +112,7 @@ const Sectionthree = () => {
                                     rows="4"
                                     cols="50"
                                     name="message"
-                                    className='text-xs md:text-2xl rounded-xl lg:text-base bg-gray px-2 py-2 md:py-4 lg:py-2  outline-none w-full '
+                                    className='text-slate-600  text-xs md:text-2xl rounded-xl lg:text-base bg-gray px-2 py-2 md:py-4 lg:py-2  outline-none w-full '
                                     style={{ width: '100%' }} // Set width to 100%
                                 />
                                 <div className="min-h-[1rem]"> {/* Reserve space for the error message */}
