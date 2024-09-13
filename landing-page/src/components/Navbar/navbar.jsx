@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${isSticky ? 'fixed top-0 left-0 w-full z-[1000] bg-white shadow-md' : ''} ${isScrolling ? 'text-black' : 'text-orange-600'} border-b`}
+      className={`${isSticky ? 'fixed top-0 left-0 w-full z-[1000] bg-black shadow-md' : ''} ${isScrolling ? 'text-black' : 'text-orange-600'} border-b`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <div className="relative flex items-center justify-between h-16">
