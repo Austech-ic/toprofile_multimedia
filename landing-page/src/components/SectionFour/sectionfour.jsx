@@ -134,9 +134,9 @@ const Sectionfour = () => {
 
     return (
         <div className="overflow-x-hidden">
-            <div className="bg-black">
-                <div className="px-10 py-10 md:py-16 md:px-16 lg:px-20 lg:py-28 text-white">
-                    <div data-aos="fade-down">
+            <div className="bg-black ">
+                <div className="px-10 py-10 md:py-16 md:px-16 lg:px-20 lg:py-28 text-white ">
+                    <div data-aos="fade-down" className="pb-10 md:pb-32">
                         <p className="text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-700">
                             Our Services
                         </p>
