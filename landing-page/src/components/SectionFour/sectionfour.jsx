@@ -247,7 +247,7 @@ const Sectionfour = () => {
 
                     <div
                     data-aos="fade-left"
-                        className="pt-14 md:pt-16 lg:pt-12 bg-cover bg-center h-screen"
+                        className="bg-cover bg-center h-screen"
                         style={{ backgroundImage: `url('/img/newimg.svg')` }}
                     >
                         <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20">
