@@ -4,14 +4,12 @@ import Navbar from '../Navbar/navbar';
 import Swiper from '../Swiper/swiper';
 import 'swiper/css';
 import { GoDotFill } from 'react-icons/go';
-
-
+import Image from 'next/image';
 
 const SectionOne = () => {
   const [currentImage, setCurrentImage] = useState('/img/imageone.svg');
-  const [isFading, setIsFading] = useState(false); // To handle fade effect
+  const [isFading, setIsFading] = useState(false);
 
-  // Memoize images array
   const images = useMemo(() => [
     '/img/imageone.svg',
     '/img/imagetwo.svg',
@@ -21,39 +19,33 @@ const SectionOne = () => {
   ], []);
 
   useEffect(() => {
-    // Preload images
-    const preloadImages = () => {
-      images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-    };
-
-    preloadImages();
-
     const intervalId = setInterval(() => {
-      setIsFading(true); // Start fade out
+      setIsFading(true);
 
-      // Preload the next image before setting it
-      const preloadNextImage = new Image();
       const nextImageSrc = images[(images.indexOf(currentImage) + 1) % images.length];
-      preloadNextImage.src = nextImageSrc;
 
-      preloadNextImage.onload = () => {
-        setTimeout(() => {
-          setCurrentImage(nextImageSrc);
-          setIsFading(false); // Fade in after image is set
-        }, 500); // Wait 500ms for fade out
-      };
-    }, 5000); // Change every 5 seconds
+      setTimeout(() => {
+        setCurrentImage(nextImageSrc);
+        setIsFading(false);
+      }, 500);
+    }, 5000);
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    return () => clearInterval(intervalId);
   }, [images, currentImage]);
 
-  
-
   return (
-    <div className={`bg-cover bg-center h-screen transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url(${currentImage})` }}>
+    <div
+      className={`relative h-screen transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      style={{ backgroundImage: `url(${currentImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <Image
+        src={currentImage}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        priority
+        style={{ visibility: 'hidden' }} // Hide the image element but preload it
+      />
       <Navbar />
       <div className='flex justify-center items-center h-full'>
         <div>
@@ -73,28 +65,27 @@ const SectionOne = () => {
             <Swiper />
           </div>
 
-
           <div className='hidden py-2 md:py-4 lg:py-4 xl:flex justify-between items-center'>
-          <div className='flex justify-between items-center text-white'>
-          <div className='flex justify-start items-center'>
-            <GoDotFill className='text-red-600 h-8 w-8' />
-            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
-              Chart-topping Disc Jockey (DJ) in the city!
-            </p>
-          </div>
-          <div className='flex justify-start items-center'>
-            <GoDotFill className='text-yellow-600 h-8 w-8' />
-            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
-              Chart-topping Disc Jockey (DJ) in the city!
-            </p>
-          </div>
-          <div className='flex justify-start items-center'>
-            <GoDotFill className='text-purple-600 h-8 w-8' />
-            <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
-              Chart-topping Disc Jockey (DJ) in the city!
-            </p>
-          </div>
-        </div>
+            <div className='flex justify-between items-center text-white'>
+              <div className='flex justify-start items-center'>
+                <GoDotFill className='text-red-600 h-8 w-8' />
+                <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+                  Chart-topping Disc Jockey (DJ) in the city!
+                </p>
+              </div>
+              <div className='flex justify-start items-center'>
+                <GoDotFill className='text-yellow-600 h-8 w-8' />
+                <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+                  Chart-topping Disc Jockey (DJ) in the city!
+                </p>
+              </div>
+              <div className='flex justify-start items-center'>
+                <GoDotFill className='text-purple-600 h-8 w-8' />
+                <p className='font-extrabold text-xs md:text-2xl lg:text-base xl:text-lg'>
+                  Chart-topping Disc Jockey (DJ) in the city!
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className='py-6 lg:py-10 flex justify-center items-center'>
