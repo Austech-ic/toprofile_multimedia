@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${isSticky ? 'fixed top-0 left-0 w-full z-[1000] bg-transparent shadow-md' : ''} ${isScrolling ? 'text-black' : 'text-white'} border-b`}
+      className={`${isSticky ? 'fixed top-0 left-0 w-full z-[1000] bg-white shadow-md' : ''} ${isScrolling ? 'text-black' : 'text-orange-600'} border-b`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <div className="relative flex items-center justify-between h-16">
@@ -70,13 +70,13 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:flex sm:items-center">
             <div className="flex items-center space-x-8">
-              <a href="#" className="text-gray-300 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal">
+              <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal`}>
                 HOME
               </a>
-              <a href="#" className="text-gray-300 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal">
+              <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal`}>
                 SERVICES
               </a>
-              <a href="#" className="text-gray-300 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal">
+              <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:text-orange-500 hover:border-b-2 hover:border-orange-500 px-1 py-2 text-sm md:text-lg xl:text-base font-normal`}>
                 CONTACT US
               </a>
               <Link href="https://wa.me/message/SPYDZQEVY2DVC1">
@@ -91,13 +91,13 @@ const Navbar = () => {
       {isOpen && (
        <div className="sm:hidden absolute top-16 left-0 w-full z-[999] bg-gray-700 shadow-2xl">
           <div className="px-4 pt-2 pb-3 space-y-0 bg-gray-700 shadow-2xl">
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal">
+            <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal`}>
               HOME
             </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal">
+            <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal`}>
               SERVICES
             </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal">
+            <a href="#" className={`${isScrolling ? 'text-orange-600' : 'text-gray-300'} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-xs font-normal`}>
               CONTACT
             </a>
             <Link href="https://wa.me/message/SPYDZQEVY2DVC1" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md text-xs font-normal px-3 py-2">
