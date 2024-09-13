@@ -5,6 +5,8 @@ import eventwo from "../../../public/img/eventwo.svg";
 import eventhree from "../../../public/img/eventhree.svg";
 import eventfour from "../../../public/img/eventfour.svg";
 import eventfive from "../../../public/img/eventfive.svg";
+import Close from "../../../public/img/close.svg";
+import Hall from "../../../public/img/hall.svg";
 import style from "./sectionfour.module.css";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
@@ -68,6 +70,35 @@ const Sectionfour = () => {
         { id: 50, text: "Open Mic Nights" },
     ];
 
+    const info = [
+        {
+            id: 1,
+            image: Close,
+            label: "Event Coverage",
+            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
+        },
+        {
+            id: 2,
+            image: Close,
+            label: "Disc Jockey",
+            text: "We have a chart-topping DJ service. We will set up and play recorded music for your audience, ensuring excellent music and sound production. Our DJs add creative flair to their art and we never run out of popular songs and danceable beats. "
+        },
+        {
+            id: 3,
+            image: Close,
+            label: "Event Coverage",
+            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
+        },
+        {
+            id: 4,
+            image: Close,
+            label: "Event Coverage",
+            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
+        },
+        
+
+    ]
+
     useEffect(() => {
         AOS.init({
             duration: 1000, // Duration of animations
@@ -107,46 +138,105 @@ const Sectionfour = () => {
                             Our Services
                         </p>
 
-                        {/* Displaying Images */}
-                        <div className="pt-6 lg:pt-10 block lg:hidden xl:block" data-aos="fade-right" data-aos-delay="200">
-                            <div className="flex flex-col xl:flex-row ">
-                                <div className="xl:flex-0 ">
-                                    <Image src={eventone} alt="all-img" className="md:w-[100%] xl:w-[auto]  " />
-                                </div>
-                                <div className="lg:flex-1 flex flex-col  w-[100%]">
-                                    <div className="flex flex-col lg:flex-row">
-                                        <Image src={eventwo} alt="all-img" className="md:w-[100%] xl:w-[auto] " />
-                                        <Image src={eventhree} alt="all-img" className="md:w-[100%] xl:w-[auto] " />
+
+
+
+                        <div>
+                            {/* Mobile */}
+                            <div className='block lg:hidden md:pt-6'>
+                                <div className={style.slidercontainer}>
+                                    <div className={style.slider}>
+                                        <div className='flex justify-between items-center  gap-2  text-white'>
+                                            <div className='flex justify-start items-center gap-2'>
+                                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Corporate Events</p>
+                                                <div className='border border-t-8 h-[20px]'></div>
+                                            </div>
+                                            <div className='flex justify-start items-center  gap-2'>
+                                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Live Concerts</p>
+                                                <div className='border border-t-8 h-[20px]'></div>
+                                            </div>
+                                            <div className='flex justify-start items-center  gap-2'>
+                                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Weddings</p>
+                                                <div className='border border-t-8 h-[20px]'></div>
+                                            </div>
+                                            <div className='flex justify-start items-center  gap-2'>
+                                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Audiovisual Production</p>
+                                                <div className='border border-t-8 h-[20px]'></div>
+                                            </div>
+                                            <div className='flex justify-start items-center  gap-2'>
+                                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Rentals</p>
+                                                <div className='border border-t-8 h-[20px]'></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="flex flex-col lg:flex-row">
-                                        <Image src={eventfour} alt="all-img" className="md:w-[100%] xl:w-[auto]" />
-                                        <Image src={eventfive} alt="all-img" className="md:w-[100%] xl:w-[auto]" />
-                                    </div>
                                 </div>
+                            </div>
+
+
+
+                            {/* Desktop */}
+                            <div className='hidden lg:flex items-center justify-center text-white gap-2 py-4'>
+                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Corporate Events</p>
+                                <div className='border border-t-8 h-[20px]'></div>
+                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'> Live Concerts</p>
+                                <div className='border border-t-8 h-[20px]'></div>
+                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Weddings</p>
+                                <div className='border border-t-8 h-[20px]'></div>
+                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'> Audiovisual Production</p>
+                                <div className='border border-t-8 h-[20px]'></div>
+                                <p className='text-xs md:text-2xl lg:text-lg xl:text-xl font-josefin'>Rentals</p>
                             </div>
                         </div>
 
 
-                        <div className="pt-6 lg:pt-10 hidden lg:block xl:hidden" data-aos="fade-right" data-aos-delay="200">
-                            <div className="flex flex-col lg:justify-center lg:items-center xl:flex-row">
-                                <div className="flex-1 xl:flex-0">
-                                    <Image src={eventone} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
+
+                    
+                        <div className="pt-6 lg:pt-10  flex flex-col lg:flex-row gap-16 lg:gap-10 " >
+                            <div className="flex flex-col gap-2 md:gap-3 rounded-2xl"
+                                style={{ boxShadow: '0px 0px 10.8px 8px #FF4D03B2' }}>
+                                <div className="h-[75vh] lg:h-[94vh] xl:h-[78vh] w-[100%]">
+                                    <Image
+                                        src={Hall}
+                                        alt="pic-img"
+                                        className="w-[100%] h-[100%] object-cover rounded-t-2xl"
+                                    />
                                 </div>
-                                <div className="lg:flex-1 flex flex-col">
-                                    <div className="flex flex-col lg:flex-row">
-                                        <Image src={eventwo} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
-                                        <Image src={eventhree} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
-                                    </div>
-                                    <div className="flex flex-col lg:flex-row">
-                                        <Image src={eventfour} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
-                                        <Image src={eventfive} alt="all-img" className="md:w-[100%] lg:w-[auto]" />
-                                    </div>
+                                <div className="px-3 py-6 md:px-6 md:py-8 lg:p-4 flex flex-col gap-4 md:gap-3">
+                                    <p className="font-light text-xl md:text-4xl lg:text-2xl xl:text-3xl hover:text-orange-700 cursor-pointer">Event Coverage</p>
+                                    <p className="font-light text-sm md:text-2xl lg:text-lg xl:text-xl leading-relaxed md:leading-relaxed lg:leading-snug xl:leading-normal">
+                                        Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc.
+                                    </p>
                                 </div>
                             </div>
+
+
+
+
+                            <div className="flex-2 grid lg:grid-cols-2 gap-10 ">
+                              
+                              {
+                                info.map((item) => (
+                                    <div key={item.id} className="flex flex-col gap-2 md:gap-3 rounded-2xl h-[50vh] lg:h-[72vh] xl:h-[58vh]"
+                                    style={{ boxShadow: '0px 0px 10.8px 8px #FF4D03B2' }}>
+                                    <div className="h-[15vh] w-[100%]">
+                                        <Image
+                                            src={item.image}
+                                            alt="pic-img"
+                                            className="w-[100%] h-[100%] object-cover rounded-t-2xl"
+                                        />
+                                    </div>
+                                    <div className="p-4 flex flex-col gap-2 md:gap-6 lg:gap-3">
+                                        <p className="font-light text-xl md:text-4xl lg:text-2xl xl:text-3xl hover:text-orange-700 cursor-pointer">{item.label}</p>
+                                        <p className="font-light text-sm md:text-2xl lg:text-lg xl:text-xl leading-relaxed md:leading-relaxed lg:leading-snug xl:leading-normal">
+                                        {item.text}
+                                    </p>
+                                    </div>
+                                </div>
+                                ))
+}
+                               
+                            </div>
                         </div>
-
-
-                       
 
 
 
