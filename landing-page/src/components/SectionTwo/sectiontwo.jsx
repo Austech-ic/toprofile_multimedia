@@ -22,7 +22,11 @@ const Sectiontwo = () => {
        </div>
 
        <div className='px-4 md:px-6 lg:px-0 pt-6 lg:pt-10 ' data-aos="fade-up" >
-        <Image src={all} alt='all-img' className='w-[100%]' />
+        <Image 
+        src={all} alt='all-img' 
+        className='w-[100%]'
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" />
        </div>
     </div>
     </div>

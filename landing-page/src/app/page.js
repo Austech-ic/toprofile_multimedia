@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="overflow-hidden">
+    <main className="relative overflow-hidden">
       <SectionOne />
       <SectionFour />
       <SectionTwo />

@@ -202,6 +202,8 @@ const Sectionfour = () => {
                                         src={Hall}
                                         alt="pic-img"
                                         className="w-[100%] h-[100%] object-cover rounded-t-2xl"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            loading="lazy"
                                     />
                                 </div>
                                 <div className="px-3 py-6 md:px-6 md:py-8 lg:p-4 flex flex-col gap-4 md:gap-3">
@@ -226,6 +228,8 @@ const Sectionfour = () => {
                                             src={item.image}
                                             alt="pic-img"
                                             className="w-[100%] h-[100%] object-cover rounded-t-2xl"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            loading="lazy"
                                         />
                                     </div>
                                     <div className="p-4 flex flex-col gap-2 md:gap-6 lg:gap-3">
