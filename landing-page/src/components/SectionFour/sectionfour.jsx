@@ -136,7 +136,7 @@ const Sectionfour = () => {
         <div className="overflow-x-hidden">
             <div className="bg-black">
                 <div className="px-10 py-10 md:py-16 md:px-16 lg:px-20 lg:py-28 text-white">
-                    <div>
+                    <div data-aos="fade-down">
                         <p className="text-center text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-josefin text-orange-700">
                             Our Services
                         </p>
@@ -246,6 +246,7 @@ const Sectionfour = () => {
                     </div>
 
                     <div
+                    data-aos="fade-left"
                         className="pt-14 md:pt-16 lg:pt-12 bg-cover bg-center h-screen"
                         style={{ backgroundImage: `url('/img/newimg.svg')` }}
                     >
