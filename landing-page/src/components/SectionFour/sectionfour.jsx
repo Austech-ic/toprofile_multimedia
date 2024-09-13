@@ -7,6 +7,9 @@ import eventfour from "../../../public/img/eventfour.svg";
 import eventfive from "../../../public/img/eventfive.svg";
 import Close from "../../../public/img/close.svg";
 import Hall from "../../../public/img/hall.svg";
+import Rent from "../../../public/img/rent.svg";
+import Audio from "../../../public/img/audio.svg";
+import Clapper from "../../../public/img/clapper.svg";
 import style from "./sectionfour.module.css";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
@@ -74,26 +77,26 @@ const Sectionfour = () => {
         {
             id: 1,
             image: Close,
-            label: "Event Coverage",
-            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
-        },
-        {
-            id: 2,
-            image: Close,
             label: "Disc Jockey",
             text: "We have a chart-topping DJ service. We will set up and play recorded music for your audience, ensuring excellent music and sound production. Our DJs add creative flair to their art and we never run out of popular songs and danceable beats. "
         },
         {
+            id: 2,
+            image: Rent,
+            label: "Equipment Rental",
+            text: "When we can, we lease out our equipment to event managers and film makers. Thereby, we relieve you of the financial burden of owning high-grade equipment. We ensure you meet our equipment in a good and rentable condition. "
+        },
+        {
             id: 3,
-            image: Close,
-            label: "Event Coverage",
-            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
+            image: Audio,
+            label: "Audiovisual Production",
+            text: "This entails the making of both auditory and visual contents. Among these are adverts/commercials, corporate videos, TV shows, films, music videos, etc"
         },
         {
             id: 4,
-            image: Close,
-            label: "Event Coverage",
-            text: "Event Coverage With our digital cameras, we cover (record) live events such as conferences (business, academic, or political), weddings, parties, concerts, rallies, publicity stunts, festivals, anniversaries, outreaches, carnivals, etc"
+            image: Clapper,
+            label: "Digital Media/AI",
+            text: "The business landscape has been taken over by the digital media. Our enterprise cuts across social media, web, live-streaming, animation, AI, etc."
         },
         
 
