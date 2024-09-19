@@ -50,7 +50,7 @@ const SectionOne = () => {
       <div className='flex justify-center items-center h-full'>
         <div>
           <div>
-            <p className='text-2xl md:text-6xl lg:text-6xl xl:text-7xl text-white font-medium text-center uppercase leading-tight md:leading-tight lg:leading-tight xl:leading-none'>
+            <p className='text-3xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-7xl text-white font-bold text-center uppercase leading-tight md:leading-tight lg:leading-tight xl:leading-none'>
               Book us <br /> for your next <span className='text-orange-500'>event!</span>
             </p>
           </div>

@@ -249,12 +249,13 @@ const Sectionfour = () => {
 
                     </div>
 
-                    <div
+                  
+                   <div
                     data-aos="fade-left"
-                        className="bg-cover bg-center h-screen"
+                        className="bg-cover bg-center custom-xs:h-[70vh] custom-sm:h-[80vh] range-375-430:h-[60vh] custom-md:h-screen  md-to-xl:h-screen"
                         style={{ backgroundImage: `url('/img/newimg.svg')` }}
                     >
-                        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20">
+                        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20 ">
                             <div className="pt-4 md:pt-10 lg:pt-24">
                                 <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300">
                                     Events We Cover
@@ -283,6 +284,7 @@ const Sectionfour = () => {
 
                         </div>
                     </div>
+                   
                 </div>
             </div>
         </div>

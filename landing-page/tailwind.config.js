@@ -15,6 +15,14 @@ module.exports = {
       fontFamily: {
         'josefin': ['Josefin_San', 'sans-serif'],
       },
+      screens: {
+        'custom-xs':'360px',
+        'custom-sm': '375px', // Custom screen for 344px width
+        'custom-md': { 'min': '540px', 'max': '1024px' },
+        'range-375-430': { 'min': '390px', 'max': '430px' },
+        'range-1024-1366-h': { 'min': '1024px', 'raw': '(max-height: 1366px)' },
+        'md-to-xl': { 'min': '1024px', 'max': '1280px' },
+      },
     },
   },
   plugins: [],

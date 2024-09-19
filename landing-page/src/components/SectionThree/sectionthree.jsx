@@ -112,7 +112,7 @@ const Sectionthree = () => {
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col gap-2 md:gap-6 py-5" autoComplete="off">
-            <div className="flex justify-between items-center gap-2 lg:gap-8">
+            <div className="flex flex-col custom-sm:flex-row justify-between items-center gap-y-0 gap-x-2 md:gap-x-10 lg:gap-x-8">
               <div className="flex flex-col gap-2 w-[100%] lg:w-[80%]">
                 <label htmlFor="name" className="text-xs md:text-2xl lg:text-base">
                   Full Name<span className="text-red-500">*</span>
