@@ -68,7 +68,7 @@ const SectionOne = () => {
       {/* Content */}
       <div className='relative z-10 flex flex-col justify-center items-center h-full'>
         <div className='text-center'>
-          <p className='text-3xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-7xl text-white font-bold uppercase leading-tight md:leading-tight lg:leading-tight xl:leading-none'>
+          <p className='text-2xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-7xl text-white font-bold uppercase leading-tight md:leading-tight lg:leading-tight xl:leading-none'>
             Book us <br /> for your next <span className='text-orange-500'>event!</span>
           </p>
           <p className='block text-xs md:text-2xl lg:text-lg xl:text-xl text-white font-bold lg:font-light leading-normal py-2 lg:py-4'>
