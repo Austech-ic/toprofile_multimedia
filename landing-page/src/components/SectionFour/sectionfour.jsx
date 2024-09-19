@@ -69,8 +69,8 @@ const Sectionfour = () => {
         { id: 46, text: "Photo Shoots" },
         { id: 47, text: "Car Shows" },
         { id: 48, text: "Wine Tastings" },
-        { id: 49, text: "Public Talks" },
-        { id: 50, text: "Open Mic Nights" },
+        // { id: 49, text: "Public Talks" },
+        // { id: 50, text: "Open Mic Nights" },
     ];
 
     const info = [
@@ -98,7 +98,7 @@ const Sectionfour = () => {
             label: "Digital Media/AI",
             text: "The business landscape has been taken over by the digital media. Our enterprise cuts across social media, web, live-streaming, animation, AI, etc."
         },
-        
+
 
     ]
 
@@ -193,7 +193,7 @@ const Sectionfour = () => {
 
 
 
-                    
+
                         <div className="pt-6 lg:pt-10  flex flex-col lg:flex-row gap-16 lg:gap-10 " >
                             <div className="flex flex-col gap-2 md:gap-3 rounded-2xl"
                                 style={{ boxShadow: '0px 0px 10.8px 8px #FF4D03B2' }}>
@@ -203,7 +203,7 @@ const Sectionfour = () => {
                                         alt="pic-img"
                                         className="w-[100%] h-[100%] object-cover rounded-t-2xl"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            loading="lazy"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <div className="px-3 py-6 md:px-6 md:py-8 lg:p-4 flex flex-col gap-4 md:gap-3">
@@ -218,30 +218,30 @@ const Sectionfour = () => {
 
 
                             <div className="flex-2 grid lg:grid-cols-2 gap-10 ">
-                              
-                              {
-                                info.map((item) => (
-                                    <div key={item.id} className="flex flex-col gap-2 md:gap-3 rounded-2xl h-[50vh] lg:h-[72vh] xl:h-[58vh]"
-                                    style={{ boxShadow: '0px 0px 10.8px 8px #FF4D03B2' }}>
-                                    <div className="h-[15vh] w-[100%]">
-                                        <Image
-                                            src={item.image}
-                                            alt="pic-img"
-                                            className="w-[100%] h-[100%] object-cover rounded-t-2xl"
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                    <div className="p-4 flex flex-col gap-2 md:gap-6 lg:gap-3">
-                                        <p className="font-light text-xl md:text-4xl lg:text-2xl xl:text-3xl hover:text-orange-700 cursor-pointer">{item.label}</p>
-                                        <p className="font-light text-sm md:text-2xl lg:text-lg xl:text-xl leading-relaxed md:leading-relaxed lg:leading-snug xl:leading-normal">
-                                        {item.text}
-                                    </p>
-                                    </div>
-                                </div>
-                                ))
-}
-                               
+
+                                {
+                                    info.map((item) => (
+                                        <div key={item.id} className="flex flex-col gap-2 md:gap-3 rounded-2xl h-[50vh] lg:h-[72vh] xl:h-[58vh]"
+                                            style={{ boxShadow: '0px 0px 10.8px 8px #FF4D03B2' }}>
+                                            <div className="h-[15vh] w-[100%]">
+                                                <Image
+                                                    src={item.image}
+                                                    alt="pic-img"
+                                                    className="w-[100%] h-[100%] object-cover rounded-t-2xl"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                            <div className="p-4 flex flex-col gap-2 md:gap-6 lg:gap-3">
+                                                <p className="font-light text-xl md:text-4xl lg:text-2xl xl:text-3xl hover:text-orange-700 cursor-pointer">{item.label}</p>
+                                                <p className="font-light text-sm md:text-2xl lg:text-lg xl:text-xl leading-relaxed md:leading-relaxed lg:leading-snug xl:leading-normal">
+                                                    {item.text}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+
                             </div>
                         </div>
 
@@ -249,42 +249,41 @@ const Sectionfour = () => {
 
                     </div>
 
-                  
-                   <div
-                    data-aos="fade-left"
-                        className="bg-cover bg-center custom-xs:h-[70vh] custom-sm:h-[80vh] range-375-430:h-[60vh] custom-md:h-screen  md-to-xl:h-screen"
-                        style={{ backgroundImage: `url('/img/newimg.svg')` }}
-                    >
-                        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20 ">
-                            <div className="pt-4 md:pt-10 lg:pt-24">
-                                <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300">
-                                    Events We Cover
-                                </p>
-                                <div className="border-b-4 w-[25%] h-[1vh] md:h-[2vh] ml-[80px] md:ml-[200px] lg:ml-[155px] xl:ml-[250px] border-orange-300 lg:w-[15%] xl:w-[17%]"></div>
 
-                            </div>
+                 <div
+  data-aos="fade-left"
+  className="bg-cover bg-center flex flex-col overflow-hidden py-10 md:py-20"
+  style={{ backgroundImage: `url('/img/newimg.svg')` }}
+>
+  <div className="flex-grow">
+    <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20">
+      <div className="pt-4 md:pt-10 lg:pt-24">
+        <p className="text-xl md:text-5xl lg:text-4xl xl:text-6xl font-light text-orange-300">
+          Events We Cover
+        </p>
+        <div className="border-b-4 w-[25%] h-[1vh] md:h-[2vh] ml-[80px] md:ml-[200px] lg:ml-[155px] xl:ml-[250px] border-orange-300 lg:w-[15%] xl:w-[17%]"></div>
+      </div>
 
-                            {/* Display the events grid */}
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10 md:pt-20 lg:pt-10 xl:pt-24 md:gap-10 lg:gap-12">
-                                {displayedItems.map((datum) => (
-                                    <div
-                                        key={datum.id}
-                                        className="bg-white flex items-center justify-start xl:justify-center gap-1 md:gap-2 lg:gap-0 border rounded-xl px-2 py-2 md:py-3 lg:py-2"
-                                    >
-                                        <GoDotFill className="text-gray-500 w-4 h-4  md:w-6 md:h-6" />
-                                        <p className="text-xs md:text-2xl lg:text-sm xl:text-xl font-light text-black max-w-full truncate overflow-hidden">
-                                            {datum.text}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
+      {/* Display the events grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10 md:pt-20 lg:pt-10 xl:pt-24 md:gap-10 lg:gap-12 min-h-[300px]">
+        {displayedItems.map((datum) => (
+          <div
+            key={datum.id}
+            className="bg-white flex items-center justify-start xl:justify-center gap-1 md:gap-2 lg:gap-0 border rounded-xl px-2 py-2 md:py-3 lg:py-2"
+          >
+            <GoDotFill className="text-gray-500 w-4 h-4 md:w-6 md:h-6" />
+            <p className="text-xs md:text-2xl lg:text-sm xl:text-xl font-light text-black max-w-full truncate overflow-hidden">
+              {datum.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
-
-                        </div>
-                    </div>
-                   
                 </div>
             </div>
         </div>

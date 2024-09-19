@@ -23,6 +23,13 @@ module.exports = {
         'range-1024-1366-h': { 'min': '1024px', 'raw': '(max-height: 1366px)' },
         'md-to-xl': { 'min': '1024px', 'max': '1280px' },
       },
+      height: {
+        'custom-xs': '50vh', // For extra small screens
+        'custom-sm': '60vh', // For small screens
+        'custom-md': '70vh', // For medium screens
+        'custom-lg': '80vh', // For large screens
+        'custom-xl': '90vh', // For extra-large screens
+      },
     },
   },
   plugins: [],
