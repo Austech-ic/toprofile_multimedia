@@ -77,7 +77,7 @@ const Sectionthree = () => {
                 <div className="flex justify-start items-center gap-2 md:gap-4">
                   <MdCall className="h-4 w-4 md:h-6 md:w-6" />
                   <p className="text-xs md:text-lg xl:text-base font-normal">
-                    09047068433
+                    08100881348, 08106438010
                   </p>
                 </div>
               </Link>
